@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,46 +9,173 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="S/N Number :" />
+        android:layout_x="80dp"
+        android:layout_y="20dp"
+        android:text="Product Details"
+        android:textSize="30sp"
+        />
 
-    <EditText
-        android:id="@+id/textViewSN"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="40dp"
-        android:editable="false"
+        android:layout_x="20dp"
+        android:layout_y="80dp"
+        android:text="Product ID:"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/pId"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="65dp"
+        android:textSize="20sp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Manufacturing Date : " />
-
+        android:layout_x="20dp"
+        android:layout_y="130dp"
+        android:text="Product Name:"
+        android:textSize="20sp"
+        />
     <EditText
-        android:id="@+id/textViewmDate"
+        android:id="@+id/pName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="115dp"
+        android:textSize="20sp"
+        />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="60dp"
-        android:editable="false"
+        android:layout_x="20dp"
+        android:layout_y="180dp"
+        android:text="Material Replaced:"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/mReplace"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="165dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="230dp"
+        android:text="Total Cost:"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/cost"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="215dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="280dp"
+        android:text="Date Repaired:"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/replaceDate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="265dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="480dp"
+        android:text="Description:"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="465dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="380dp"
+        android:text="Manufacturing Date:"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/manufacDate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="210dp"
+        android:layout_y="365dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="330dp"
+        android:text="Repairman:"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/repairman"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="315dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="430dp"
+        android:text="Verified By:"
+        android:textSize="20sp"
+        />
+    <EditText
+        android:id="@+id/verifiedBy"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="415dp"
+        android:textSize="20sp"
         />
     <Button
         android:id="@+id/update"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="80dp"
-        android:text="Update"/>
-
+        android:layout_x="25dp"
+        android:layout_y="620dp"
+        android:text="Update"
+        android:textSize="25dp"
+        />
     <Button
         android:id="@+id/send"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="180dp"
-        android:text="Send"/>
+        android:layout_x="200dp"
+        android:layout_y="620dp"
+        android:text="Send"
+        android:textSize="25dp"
+        />
 
-
-</RelativeLayout>
+</AbsoluteLayout>

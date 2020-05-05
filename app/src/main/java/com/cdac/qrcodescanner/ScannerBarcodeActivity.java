@@ -121,11 +121,16 @@ public class ScannerBarcodeActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         Intent intent = new Intent(getApplicationContext(), DisplayActivity.class);
-                        intent.putExtra("sn",intentData);
-                        intent.putExtra("mdate",dataSnapshot.child("ManufacturingDate").getValue().toString());
-                        startActivity(intent);
+                        intent.putExtra("pId",intentData);
+                        intent.putExtra("ProductName",dataSnapshot.child("ProductName").getValue().toString());
+                        intent.putExtra("MaterialReplaced",dataSnapshot.child("MaterialReplaced").getValue().toString());
+                        intent.putExtra("Cost",dataSnapshot.child("Cost").getValue().toString());
+                        intent.putExtra("DateRepaired",dataSnapshot.child("DateRepaired").getValue().toString());
+                        intent.putExtra("Description",dataSnapshot.child("Description").getValue().toString());
+                        intent.putExtra("ManufacturingDate",dataSnapshot.child("ManufacturingDate").getValue().toString());
+                        intent.putExtra("Repairman",dataSnapshot.child("Repairman").getValue().toString());
+                        intent.putExtra("VerifiedBy",dataSnapshot.child("VerifiedBy").getValue().toString());                        startActivity(intent);
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
