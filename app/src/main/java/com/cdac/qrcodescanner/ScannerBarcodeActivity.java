@@ -4,10 +4,8 @@ import android.Manifest;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
@@ -16,13 +14,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.firebase.client.Firebase;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -30,7 +36,7 @@ public class ScannerBarcodeActivity extends AppCompatActivity {
 
     SurfaceView surfaceView;
     TextView textViewBarCodeValue;
-     EditText textSN,textmDate;
+    String sn,mdate;
     private BarcodeDetector barcodeDetector;
     private CameraSource cameraSource;
     private static final int REQUEST_CAMERA_PERMISSION = 201;
@@ -45,8 +51,6 @@ public class ScannerBarcodeActivity extends AppCompatActivity {
 
     private void initComponents() {
         textViewBarCodeValue = (TextView) findViewById(R.id.txtBarcodeValue);
-        textSN=(EditText) findViewById(R.id.textViewSN);
-        textmDate=(EditText) findViewById(R.id.textViewmDate);
         surfaceView = findViewById(R.id.surfaceView);
     }
 
@@ -109,21 +113,24 @@ public class ScannerBarcodeActivity extends AppCompatActivity {
             @Override
             public void run() {
                 intentData = barCode.valueAt(0).displayValue;
-                JSONObject obj = null;
-                try {
-                    obj = new JSONObject(intentData);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                //setting values to textviews
-                try {
-                    textSN.setText(obj.getString("SNo"));
-                    textmDate.setText(obj.getString("mDate"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
                 textViewBarCodeValue.setText(intentData);
                 copyToClipBoard(intentData);
+
+                DatabaseReference dRef = FirebaseDatabase.getInstance().getReference().child(intentData.toString());
+                dRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Intent intent = new Intent(getApplicationContext(), DisplayActivity.class);
+                        intent.putExtra("sn",intentData);
+                        intent.putExtra("mdate",dataSnapshot.child("ManufacturingDate").getValue().toString());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
         });
     }

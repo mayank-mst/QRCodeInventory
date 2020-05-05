@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "296345936334",
+    "firebase_url": "https://qrcodeinventory-d1bc8.firebaseio.com",
+    "project_id": "qrcodeinventory-d1bc8",
+    "storage_bucket": "qrcodeinventory-d1bc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296345936334:android:dccfa5196f3e126c444b9f",
+        "android_client_info": {
+          "package_name": "com.cdac.qrcodescanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296345936334-19jo105g08uk1fse8sv9kcg9tb9653v2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cdac.qrcodescanner",
+            "certificate_hash": "a750d745d9af35d4a9d35d59a3cd1838be8a7e90"
+          }
+        },
+        {
+          "client_id": "296345936334-8pocns9lsmb33bd7cu5pimu7krrjcftc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYe3ibmci1SbtMrXRzzi2SdsDeSy9tyQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296345936334-8pocns9lsmb33bd7cu5pimu7krrjcftc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -27,30 +27,5 @@
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="S/N Number :" />
-
-    <EditText
-        android:id="@+id/textViewSN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Manufacturing Date : " />
-    <EditText
-        android:id="@+id/textViewmDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="60dp"
-        />
 
 </RelativeLayout>
